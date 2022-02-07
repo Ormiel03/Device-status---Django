@@ -1,0 +1,18 @@
+{% extends "communicator/base.html" %}
+
+{% block title %}Moje Urzadzenia{% endblock %}
+
+{% block content %}
+    <h1 ALIGN=CENTER>Devices</h1>
+<br/>
+    {% for data in dataset %}
+
+    <h4 ALIGN="CENTER">{{ data.id }} | {{ data.name }} |
+    {% if data.status == True %} <span style="color: green">- Włączone</span>
+    {% else %} <span style="color: red">- Wyłączone</span>
+        {% endif %}<br/></h4>
+
+    {% endfor %}
+
+
+{% endblock %}
